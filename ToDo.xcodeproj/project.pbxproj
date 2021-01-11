@@ -20,6 +20,10 @@
 		E884D63025ACA3090006B0D9 /* ToDoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D62F25ACA3090006B0D9 /* ToDoUITests.swift */; };
 		E884D64025ACA61E0006B0D9 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D63F25ACA61E0006B0D9 /* CategoryViewModel.swift */; };
 		E884D64325ACB38A0006B0D9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D64225ACB38A0006B0D9 /* Item.swift */; };
+		E884D64525ACC2A80006B0D9 /* DataBaseStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D64425ACC2A80006B0D9 /* DataBaseStack.swift */; };
+		E884D64725ACC7430006B0D9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D64625ACC7430006B0D9 /* Category.swift */; };
+		E884D64A25ACD9120006B0D9 /* ItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D64925ACD9120006B0D9 /* ItemsTableViewController.swift */; };
+		E884D64C25ACD91C0006B0D9 /* ItemsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D64B25ACD91C0006B0D9 /* ItemsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		E884D63125ACA3090006B0D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E884D63F25ACA61E0006B0D9 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		E884D64225ACB38A0006B0D9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E884D64425ACC2A80006B0D9 /* DataBaseStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseStack.swift; sourceTree = "<group>"; };
+		E884D64625ACC7430006B0D9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E884D64925ACD9120006B0D9 /* ItemsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewController.swift; sourceTree = "<group>"; };
+		E884D64B25ACD91C0006B0D9 /* ItemsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +151,7 @@
 		E884D60C25ACA3080006B0D9 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				E884D64125ACB37A0006B0D9 /* Model */,
+				E884D64125ACB37A0006B0D9 /* Data Model */,
 				E884D63D25ACA5FB0006B0D9 /* View */,
 				E884D60D25ACA3080006B0D9 /* AppDelegate.swift */,
 				E884D60F25ACA3080006B0D9 /* SceneDelegate.swift */,
@@ -151,6 +159,7 @@
 				E884D61625ACA3080006B0D9 /* Assets.xcassets */,
 				E884D61825ACA3080006B0D9 /* LaunchScreen.storyboard */,
 				E884D61B25ACA3080006B0D9 /* Info.plist */,
+				E884D64425ACC2A80006B0D9 /* DataBaseStack.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -177,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E884D63E25ACA60B0006B0D9 /* Category */,
+				E884D64825ACD8FE0006B0D9 /* Items */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,12 +200,22 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		E884D64125ACB37A0006B0D9 /* Model */ = {
+		E884D64125ACB37A0006B0D9 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				E884D64625ACC7430006B0D9 /* Category.swift */,
 				E884D64225ACB38A0006B0D9 /* Item.swift */,
 			);
-			path = Model;
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		E884D64825ACD8FE0006B0D9 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				E884D64925ACD9120006B0D9 /* ItemsTableViewController.swift */,
+				E884D64B25ACD91C0006B0D9 /* ItemsViewModel.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,9 +459,13 @@
 			files = (
 				E884D64325ACB38A0006B0D9 /* Item.swift in Sources */,
 				E884D64025ACA61E0006B0D9 /* CategoryViewModel.swift in Sources */,
+				E884D64A25ACD9120006B0D9 /* ItemsTableViewController.swift in Sources */,
 				E884D61225ACA3080006B0D9 /* CategoryTableViewController.swift in Sources */,
 				E884D60E25ACA3080006B0D9 /* AppDelegate.swift in Sources */,
 				E884D61025ACA3080006B0D9 /* SceneDelegate.swift in Sources */,
+				E884D64525ACC2A80006B0D9 /* DataBaseStack.swift in Sources */,
+				E884D64725ACC7430006B0D9 /* Category.swift in Sources */,
+				E884D64C25ACD91C0006B0D9 /* ItemsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

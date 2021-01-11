@@ -7,13 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
 class CategoryViewModel {
     
-    var items: [Item] = [Item(title: "Café", done: false), Item(title: "Almoço")]
+    var categories: Results<Category>?
+    let dataBaseStack = DataBaseStack.shared
     
-    func addItem(with title: String) {
-        let item = Item(title: title)
-        items.append(item)
+    func saveNewCategory(with name: String) {
+        let category = Category()
+        category.name = name
+        dataBaseStack.save(category)
+    }
+    
+    func loadCategories() {
+        categories = dataBaseStack.loadCategories()
     }
 }

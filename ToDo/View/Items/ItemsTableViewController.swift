@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewController.swift
+//  ItemsTableViewController.swift
 //  ToDo
 //
 //  Created by João Luis Santos on 11/01/21.
@@ -8,27 +8,25 @@
 
 import UIKit
 
-class CategoryTableViewController: UITableViewController {
+class ItemsTableViewController: UITableViewController {
     
-    var viewModel: CategoryViewModel!
+    var viewModel: ItemsViewModel!
     
-    init(viewModel: CategoryViewModel) {
+    init(viewModel: ItemsViewModel) {
         super.init(nibName: nil, bundle: nil)
         self.viewModel = viewModel
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.viewModel = CategoryViewModel()
+        self.viewModel = ItemsViewModel()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.loadCategories()
     }
-    
+
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
         let alert = UIAlertController(title: "Novo Item", message: "", preferredStyle: .alert)
         var textField = UITextField()
         
@@ -38,7 +36,7 @@ class CategoryTableViewController: UITableViewController {
         
         let addAction = UIAlertAction(title: "Adicionar", style: .default) { action in
             if let name = textField.text, name != "" {
-                self.viewModel.saveNewCategory(with: name)
+                self.viewModel.saveItem(with: name)
                 self.tableView.reloadData()
             }
         }
@@ -50,37 +48,40 @@ class CategoryTableViewController: UITableViewController {
         
         present(alert, animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! ItemsTableViewController
-        if let indexPath = tableView.indexPathForSelectedRow {
-            destination.viewModel.category = viewModel.categories?[indexPath.row]
-        }
-    }
-    
-
 }
 
 // MARK: - UITableViewDataSource
 
-extension CategoryTableViewController {
+extension ItemsTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.categories?.count ?? 1
+        return viewModel.items?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "categoryCell", for: indexPath)
-        let category = viewModel.categories?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        let item = viewModel.category?.items[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Avenir", size: 24)
-        cell.textLabel?.text = category?.name ?? "Não foram adicionadas categorias"
+        cell.textLabel?.text = item?.title ?? "Não foram adicionadas categorias"
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 
-extension CategoryTableViewController {
+extension ItemsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToItemsView", sender: self)
+        tableView.reloadData()
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension CategoryTableViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
     }
 }

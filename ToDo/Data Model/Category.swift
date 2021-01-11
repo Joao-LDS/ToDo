@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  Category.swift
 //  ToDo
 //
 //  Created by João Luis Santos on 11/01/21.
@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Item {
-    var title: String = ""
-    var done: Bool = false
+class Category: Object {
+    @objc dynamic var name: String = ""
+    let items = List<Item>()
 }
