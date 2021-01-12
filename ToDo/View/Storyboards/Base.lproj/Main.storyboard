@@ -14,6 +14,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9xU-Mp-iW1">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="24"/>
                         </textAttributes>
@@ -52,6 +53,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo" id="rGI-id-Pkj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="sF8-t8-A3h">
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Q4c-Rc-lC3" id="Hek-iz-MHB"/>
                             </connections>
@@ -65,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="898" y="136"/>
         </scene>
-        <!--Items Table View Controller-->
+        <!--Itens-->
         <scene sceneID="63Q-Ub-nEJ">
             <objects>
                 <tableViewController id="Db9-qn-39f" customClass="ItemsTableViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
@@ -96,8 +98,9 @@
                             <outlet property="delegate" destination="Db9-qn-39f" id="0Hq-Uz-e6R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="X4T-G8-5fN">
+                    <navigationItem key="navigationItem" title="Itens" id="X4T-G8-5fN">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5SF-uv-wwx">
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="Db9-qn-39f" id="cql-0o-Dlv"/>
                             </connections>

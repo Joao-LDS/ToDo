@@ -27,25 +27,10 @@ class ItemsTableViewController: UITableViewController {
     }
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Novo Item", message: "", preferredStyle: .alert)
-        var textField = UITextField()
-        
-        alert.addTextField { alertTextField in
-            textField = alertTextField
+        let alert = UIAlertController().createAlertWithTextField(with: "Novo Item") { nameItem in
+            self.viewModel.saveItem(with: nameItem)
+            self.tableView.reloadData()
         }
-        
-        let addAction = UIAlertAction(title: "Adicionar", style: .default) { action in
-            if let name = textField.text, name != "" {
-                self.viewModel.saveItem(with: name)
-                self.tableView.reloadData()
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
-        
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        
         present(alert, animated: true)
     }
 }
@@ -59,9 +44,12 @@ extension ItemsTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
-        let item = viewModel.category?.items[indexPath.row]
+        let item = viewModel.items?[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Avenir", size: 24)
+        
         cell.textLabel?.text = item?.title ?? "Não foram adicionadas categorias"
+        cell.accessoryType = item?.done == true ? .checkmark : .none
+        
         return cell
     }
 }
@@ -70,15 +58,26 @@ extension ItemsTableViewController {
 
 extension ItemsTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.reloadData()
+        if let item = viewModel.items?[indexPath.row] {
+            viewModel.writeDoneIn(item)
+            tableView.reloadData()
+        }
     }
 }
 
 // MARK: - UISearchBarDelegate
 
-extension CategoryTableViewController: UISearchBarDelegate {
+extension ItemsTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.items = viewModel.items?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "title", ascending: true)
+        tableView.reloadData()
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
+            viewModel.loadItems()
+            tableView.reloadData()
             DispatchQueue.main.async {
                 searchBar.resignFirstResponder()
             }

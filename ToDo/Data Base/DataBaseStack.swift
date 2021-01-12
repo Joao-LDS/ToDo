@@ -36,4 +36,12 @@ class DataBaseStack {
         return categories
     }
     
+    func writeDoneIn(_ item: Item) {
+        do {
+            try realm.write({
+                item.done = !item.done
+            })
+        } catch {}
+    }
+    
 }

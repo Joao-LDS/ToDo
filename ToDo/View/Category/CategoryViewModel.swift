@@ -12,15 +12,15 @@ import RealmSwift
 class CategoryViewModel {
     
     var categories: Results<Category>?
-    let dataBaseStack = DataBaseStack.shared
+    let db = DataBaseStack.shared
     
     func saveNewCategory(with name: String) {
         let category = Category()
         category.name = name
-        dataBaseStack.save(category)
+        db.save(category)
     }
     
     func loadCategories() {
-        categories = dataBaseStack.loadCategories()
+        self.categories = db.loadCategories()
     }
 }

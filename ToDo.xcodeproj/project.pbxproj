@@ -10,8 +10,8 @@
 		433F7663C5B01DD46E1B4B3D /* Pods_ToDo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC79701539A61F16D70F87C /* Pods_ToDo.framework */; };
 		5C7853A4C0C5187D1B41801C /* Pods_ToDo_ToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7178D14A0434EABD57593CE4 /* Pods_ToDo_ToDoUITests.framework */; };
 		C3246E0C7FB4B5FED4DA0B56 /* Pods_ToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF7243515E0049DFC0BE7B /* Pods_ToDoTests.framework */; };
+		E86D7D7325ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */; };
 		E884D60E25ACA3080006B0D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D60D25ACA3080006B0D9 /* AppDelegate.swift */; };
-		E884D61025ACA3080006B0D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D60F25ACA3080006B0D9 /* SceneDelegate.swift */; };
 		E884D61225ACA3080006B0D9 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D61125ACA3080006B0D9 /* CategoryTableViewController.swift */; };
 		E884D61525ACA3080006B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E884D61325ACA3080006B0D9 /* Main.storyboard */; };
 		E884D61725ACA3080006B0D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E884D61625ACA3080006B0D9 /* Assets.xcassets */; };
@@ -53,9 +53,9 @@
 		9DC79701539A61F16D70F87C /* Pods_ToDo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE38000A80B2008FA620644F /* Pods-ToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoTests/Pods-ToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1763E3E285388F52FC69CD6 /* Pods-ToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoTests/Pods-ToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithTextFieldViewController.swift; sourceTree = "<group>"; };
 		E884D60A25ACA3080006B0D9 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884D60D25ACA3080006B0D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E884D60F25ACA3080006B0D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E884D61125ACA3080006B0D9 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		E884D61425ACA3080006B0D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E884D61625ACA3080006B0D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +126,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E86D7D6E25ADCFF400EDEFA2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E884D61325ACA3080006B0D9 /* Main.storyboard */,
+				E884D61825ACA3080006B0D9 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E86D7D6F25ADD01D00EDEFA2 /* Data Base */ = {
+			isa = PBXGroup;
+			children = (
+				E884D64425ACC2A80006B0D9 /* DataBaseStack.swift */,
+			);
+			path = "Data Base";
+			sourceTree = "<group>";
+		};
+		E86D7D7025ADD03100EDEFA2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E884D60D25ACA3080006B0D9 /* AppDelegate.swift */,
+				E884D61625ACA3080006B0D9 /* Assets.xcassets */,
+				E884D61B25ACA3080006B0D9 /* Info.plist */,
+			);
+			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		E86D7D7125ADD5CB00EDEFA2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		E884D60125ACA3080006B0D9 = {
 			isa = PBXGroup;
 			children = (
@@ -151,15 +186,10 @@
 		E884D60C25ACA3080006B0D9 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				E86D7D7025ADD03100EDEFA2 /* Support Files */,
 				E884D64125ACB37A0006B0D9 /* Data Model */,
 				E884D63D25ACA5FB0006B0D9 /* View */,
-				E884D60D25ACA3080006B0D9 /* AppDelegate.swift */,
-				E884D60F25ACA3080006B0D9 /* SceneDelegate.swift */,
-				E884D61325ACA3080006B0D9 /* Main.storyboard */,
-				E884D61625ACA3080006B0D9 /* Assets.xcassets */,
-				E884D61825ACA3080006B0D9 /* LaunchScreen.storyboard */,
-				E884D61B25ACA3080006B0D9 /* Info.plist */,
-				E884D64425ACC2A80006B0D9 /* DataBaseStack.swift */,
+				E86D7D6F25ADD01D00EDEFA2 /* Data Base */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -187,6 +217,8 @@
 			children = (
 				E884D63E25ACA60B0006B0D9 /* Category */,
 				E884D64825ACD8FE0006B0D9 /* Items */,
+				E86D7D6E25ADCFF400EDEFA2 /* Storyboards */,
+				E86D7D7125ADD5CB00EDEFA2 /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -458,11 +490,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E884D64325ACB38A0006B0D9 /* Item.swift in Sources */,
+				E86D7D7325ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift in Sources */,
 				E884D64025ACA61E0006B0D9 /* CategoryViewModel.swift in Sources */,
 				E884D64A25ACD9120006B0D9 /* ItemsTableViewController.swift in Sources */,
 				E884D61225ACA3080006B0D9 /* CategoryTableViewController.swift in Sources */,
 				E884D60E25ACA3080006B0D9 /* AppDelegate.swift in Sources */,
-				E884D61025ACA3080006B0D9 /* SceneDelegate.swift in Sources */,
 				E884D64525ACC2A80006B0D9 /* DataBaseStack.swift in Sources */,
 				E884D64725ACC7430006B0D9 /* Category.swift in Sources */,
 				E884D64C25ACD91C0006B0D9 /* ItemsViewModel.swift in Sources */,
@@ -641,7 +673,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FGAJ25MKJ;
-				INFOPLIST_FILE = ToDo/Info.plist;
+				INFOPLIST_FILE = "ToDo/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -660,7 +692,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FGAJ25MKJ;
-				INFOPLIST_FILE = ToDo/Info.plist;
+				INFOPLIST_FILE = "ToDo/Support Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

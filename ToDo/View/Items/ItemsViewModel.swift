@@ -28,7 +28,10 @@ class ItemsViewModel {
     }
     
     func loadItems() {
-        items = category?.items.sorted(byKeyPath: "title", ascending: true)
-        
+        self.items = category?.items.sorted(byKeyPath: "title", ascending: true)
+    }
+    
+    func writeDoneIn(_ item: Item) {
+        db.writeDoneIn(item)
     }
 }

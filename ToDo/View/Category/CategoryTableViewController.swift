@@ -28,26 +28,10 @@ class CategoryTableViewController: UITableViewController {
     }
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
-        let alert = UIAlertController(title: "Novo Item", message: "", preferredStyle: .alert)
-        var textField = UITextField()
-        
-        alert.addTextField { alertTextField in
-            textField = alertTextField
+        let alert = UIAlertController().createAlertWithTextField(with: "Nova Categoria") { titleCategory in
+            self.viewModel.saveNewCategory(with: titleCategory)
+            self.tableView.reloadData()
         }
-        
-        let addAction = UIAlertAction(title: "Adicionar", style: .default) { action in
-            if let name = textField.text, name != "" {
-                self.viewModel.saveNewCategory(with: name)
-                self.tableView.reloadData()
-            }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
-        
-        alert.addAction(addAction)
-        alert.addAction(cancelAction)
-        
         present(alert, animated: true)
     }
     
