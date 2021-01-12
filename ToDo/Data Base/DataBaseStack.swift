@@ -44,4 +44,12 @@ class DataBaseStack {
         } catch {}
     }
     
+    func delete(object: Object) {
+        do {
+            try realm.write({
+                realm.delete(object)
+            })
+        } catch {}
+    }
+    
 }

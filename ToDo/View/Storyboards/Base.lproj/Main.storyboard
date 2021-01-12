@@ -99,12 +99,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Itens" id="X4T-G8-5fN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5SF-uv-wwx">
-                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                            <connections>
-                                <action selector="addButtonPressed:" destination="Db9-qn-39f" id="cql-0o-Dlv"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="trash" id="Wq9-Gm-aDS">
+                                <connections>
+                                    <action selector="trashButtonPressed:" destination="Db9-qn-39f" id="jba-k2-RJz"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="5SF-uv-wwx">
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="Db9-qn-39f" id="cql-0o-Dlv"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pC2-Se-zJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

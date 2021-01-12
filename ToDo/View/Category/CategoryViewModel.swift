@@ -23,4 +23,8 @@ class CategoryViewModel {
     func loadCategories() {
         self.categories = db.loadCategories()
     }
+    
+    func delete(category: Category) {
+        db.delete(object: category)
+    }
 }

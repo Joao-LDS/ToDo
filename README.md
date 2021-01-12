@@ -14,8 +14,8 @@
 * Checkmark em items ✅
 * Buscar items ✅
 * Serialização dos models ✅
-* Edição de categorias
-* Edição de itens
+* Apagar categorias ✅
+* Apagar itens ✅
 * Unit Test e UI Test
 
 <img src="/ToDo/Support Files/Screenshots/categories.png" width="220" height="460"> <img src="/ToDo/Support Files/Screenshots/items.png" width="220" height="460">

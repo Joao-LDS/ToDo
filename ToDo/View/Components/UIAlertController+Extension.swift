@@ -1,5 +1,5 @@
 //
-//  AlertWithTextFieldViewController.swift
+//  UIAlertController+Extension.swift
 //  ToDo
 //
 //  Created by João Luis Santos on 12/01/21.
@@ -27,6 +27,21 @@ extension UIAlertController {
         let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
         
         alert.addAction(addAction)
+        alert.addAction(cancelAction)
+        
+        return alert
+    }
+    
+    func createActionSheet(with title: String, message: String, handle: @escaping () -> Void) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Apagar", style: .default) { action in
+            handle()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        
+        alert.addAction(deleteAction)
         alert.addAction(cancelAction)
         
         return alert

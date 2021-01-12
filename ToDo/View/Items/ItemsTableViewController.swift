@@ -33,6 +33,20 @@ class ItemsTableViewController: UITableViewController {
         }
         present(alert, animated: true)
     }
+    @IBAction func trashButtonPressed(_ sender: UIBarButtonItem) {
+        let actionSheet = UIAlertController().createActionSheet(with: "", message: "Deseja apagar os items marcados?") {
+            if let items = self.viewModel.items {
+                for item in items {
+                    if item.done == true {
+                        self.viewModel.delete(item)
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        }
+        present(actionSheet, animated: true)
+    }
+    
 }
 
 // MARK: - UITableViewDataSource

@@ -34,4 +34,8 @@ class ItemsViewModel {
     func writeDoneIn(_ item: Item) {
         db.writeDoneIn(item)
     }
+    
+    func delete(_ item: Item) {
+        db.delete(object: item)
+    }
 }
