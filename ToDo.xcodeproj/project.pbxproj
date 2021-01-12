@@ -11,6 +11,8 @@
 		5C7853A4C0C5187D1B41801C /* Pods_ToDo_ToDoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7178D14A0434EABD57593CE4 /* Pods_ToDo_ToDoUITests.framework */; };
 		C3246E0C7FB4B5FED4DA0B56 /* Pods_ToDoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF7243515E0049DFC0BE7B /* Pods_ToDoTests.framework */; };
 		E86D7D7325ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */; };
+		E86D7D7725ADD8A000EDEFA2 /* items.png in Resources */ = {isa = PBXBuildFile; fileRef = E86D7D7525ADD8A000EDEFA2 /* items.png */; };
+		E86D7D7825ADD8A000EDEFA2 /* categories.png in Resources */ = {isa = PBXBuildFile; fileRef = E86D7D7625ADD8A000EDEFA2 /* categories.png */; };
 		E884D60E25ACA3080006B0D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D60D25ACA3080006B0D9 /* AppDelegate.swift */; };
 		E884D61225ACA3080006B0D9 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E884D61125ACA3080006B0D9 /* CategoryTableViewController.swift */; };
 		E884D61525ACA3080006B0D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E884D61325ACA3080006B0D9 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 		AE38000A80B2008FA620644F /* Pods-ToDoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTests.release.xcconfig"; path = "Target Support Files/Pods-ToDoTests/Pods-ToDoTests.release.xcconfig"; sourceTree = "<group>"; };
 		E1763E3E285388F52FC69CD6 /* Pods-ToDoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoTests.debug.xcconfig"; path = "Target Support Files/Pods-ToDoTests/Pods-ToDoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWithTextFieldViewController.swift; sourceTree = "<group>"; };
+		E86D7D7525ADD8A000EDEFA2 /* items.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = items.png; sourceTree = "<group>"; };
+		E86D7D7625ADD8A000EDEFA2 /* categories.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = categories.png; sourceTree = "<group>"; };
 		E884D60A25ACA3080006B0D9 /* ToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E884D60D25ACA3080006B0D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E884D61125ACA3080006B0D9 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 		E86D7D7025ADD03100EDEFA2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E86D7D7425ADD89400EDEFA2 /* Screenshots */,
 				E884D60D25ACA3080006B0D9 /* AppDelegate.swift */,
 				E884D61625ACA3080006B0D9 /* Assets.xcassets */,
 				E884D61B25ACA3080006B0D9 /* Info.plist */,
@@ -159,6 +164,15 @@
 				E86D7D7225ADD5FD00EDEFA2 /* AlertWithTextFieldViewController.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E86D7D7425ADD89400EDEFA2 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				E86D7D7625ADD8A000EDEFA2 /* categories.png */,
+				E86D7D7525ADD8A000EDEFA2 /* items.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 		E884D60125ACA3080006B0D9 = {
@@ -360,7 +374,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E884D61A25ACA3080006B0D9 /* LaunchScreen.storyboard in Resources */,
+				E86D7D7825ADD8A000EDEFA2 /* categories.png in Resources */,
 				E884D61725ACA3080006B0D9 /* Assets.xcassets in Resources */,
+				E86D7D7725ADD8A000EDEFA2 /* items.png in Resources */,
 				E884D61525ACA3080006B0D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
